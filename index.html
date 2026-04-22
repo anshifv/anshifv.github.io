@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammed Anshif V | Ethical Hacker & Security Researcher</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #111118;
+            --bg-card: #16161e;
+            --text-primary: #e4e4e7;
+            --text-secondary: #a1a1aa;
+            --accent-green: #10b981;
+            --accent-green-dim: #059669;
+            --accent-red: #ef4444;
+            --border-color: #27272a;
+            --code-bg: #1e1e2a;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Skip to content - accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--accent-green);
+            color: black;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 10px;
+            left: 10px;
+        }
+
+        /* Header */
+        .location-badge {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .location-badge::before {
+            content: "📍";
+            font-size: 1rem;
+        }
+
+        .greeting {
+            font-family: 'Fira Code', 'JetBrains Mono', 'Courier New', monospace;
+            color: var(--accent-green);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .description {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--accent-green);
+            border: 1px solid var(--accent-green);
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-green);
+            color: var(--bg-primary);
+        }
+
+        /* Sections */
+        section {
+            margin: 4rem 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.75rem;
+        }
+
+        /* About section */
+        .about-text {
+            font-size: 1.125rem;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .code-comment {
+            font-family: 'Fira Code', 'JetBrains Mono', 'Courier New', monospace;
+            color: #6b7280;
+            font-size: 0.95rem;
+            margin: 0.5rem 0;
+        }
+
+        .code-comment .keyword {
+            color: #c084fc;
+        }
+
+        .code-comment .string {
+            color: #34d399;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .skill-card:hover {
+            border-color: var(--accent-green-dim);
+            transform: translateY(-2px);
+        }
+
+        .skill-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--accent-green);
+        }
+
+        .skill-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Tools Section */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .tool-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .tool-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .tool-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .tool-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            background-color: var(--code-bg);
+            color: var(--accent-green);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .status-free {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--accent-green);
+        }
+
+        .status-progress {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: var(--accent-red);
+        }
+
+        .tool-link {
+            color: var(--accent-green);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .tool-link:hover {
+            text-decoration: underline;
+        }
+
+        .view-all {
+            margin-top: 1.5rem;
+            text-align: right;
+        }
+
+        .view-all a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .view-all a:hover {
+            color: var(--accent-green);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .contact-section h2 {
+            border-bottom: none;
+            margin-bottom: 1rem;
+            padding-bottom: 0;
+        }
+
+        .contact-section p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .email-link {
+            display: inline-block;
+            font-family: 'Fira Code', monospace;
+            font-size: 1.1rem;
+            color: var(--accent-green);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--bg-card);
+            transition: all 0.2s ease;
+        }
+
+        .email-link:hover {
+            border-color: var(--accent-green);
+            background-color: var(--code-bg);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            text-align: center;
+        }
+
+        /* ASCII Art / Terminal decoration */
+        .terminal-prompt {
+            font-family: 'Fira Code', monospace;
+            color: var(--accent-green);
+            margin-right: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2.25rem;
+            }
+
+            .container {
+                padding: 1.5rem 1rem;
+            }
+
+            .contact-section {
+                padding: 1.5rem;
+            }
+
+            .skills-grid,
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Selection styling */
+        ::selection {
+            background-color: var(--accent-green);
+            color: var(--bg-primary);
+        }
+
+        /* Fira Code font fallback */
+        @supports not (font-family: 'Fira Code') {
+            .code-comment,
+            .terminal-prompt,
+            .greeting,
+            .email-link,
+            .tag {
+                font-family: 'Courier New', monospace;
+            }
+        }
+    </style>
+    <!-- Load Fira Code for monospace -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <main id="main-content" class="container">
+        <!-- Location Badge -->
+        <div class="location-badge">Based in Kerala, India</div>
+
+        <!-- Hero Section -->
+        <div class="greeting">
+            <span class="terminal-prompt">></span> Hello World
+        </div>
+
+        <h1>
+            I'm Muhammed Anshif V.<br>
+            I break things to make them secure<span class="terminal-prompt" style="opacity: 0.7;">_</span>
+        </h1>
+
+        <p class="description">
+            Aspiring ethical hacker and cybersecurity enthusiast passionate about penetration testing, 
+            vulnerability research, and building a safer digital world.
+        </p>
+
+        <a href="#contact" class="cta-button">See my work →</a>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p class="about-text">
+                Hi, I'm Anshif. I'm an ethical hacker in training who loves understanding how systems work—and 
+                how they can fail. I focus on practical security, responsible disclosure, and continuous learning.
+            </p>
+            <div class="code-comment">
+                <span class="keyword">//</span> <span class="string">Based in Kerala, India</span>
+            </div>
+            <div class="code-comment">
+                <span class="keyword">//</span> <span class="string">Currently learning: Advanced Web App Pentesting & Binary Exploitation</span>
+            </div>
+            <div class="code-comment" style="margin-top: 1rem;">
+                <span class="keyword">const</span> <span style="color: #60a5fa;">skills</span> = [<span class="string">"Python"</span>, <span class="string">"Bash"</span>, <span class="string">"Nmap"</span>, <span class="string">"Burp Suite"</span>, <span class="string">"Metasploit"</span>];
+            </div>
+            <div class="code-comment">
+                <span class="keyword">const</span> <span style="color: #60a5fa;">goal</span> = <span class="string">"OSCP Certification"</span>;
+            </div>
+        </section>
+
+        <!-- What I do / Learning Focus -->
+        <section id="skills">
+            <h2>What I'm Learning</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>🔓 Web Application Security</h3>
+                    <p>OWASP Top 10, SQL Injection, XSS, CSRF, authentication bypasses, and API security testing.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🌐 Network Penetration Testing</h3>
+                    <p>Network reconnaissance, vulnerability scanning with Nmap, exploitation with Metasploit, and privilege escalation.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🔐 Cryptography & Password Security</h3>
+                    <p>Understanding hashing algorithms, password cracking techniques (Hashcat, John the Ripper), and encryption fundamentals.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🐧 Linux & System Hardening</h3>
+                    <p>Linux security internals, privilege escalation paths, system monitoring, and securing server configurations.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>📱 Mobile Security Basics</h3>
+                    <p>Android app reverse engineering, SSL pinning bypass, and analyzing mobile application vulnerabilities.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>📝 Report Writing & Responsible Disclosure</h3>
+                    <p>Creating clear, actionable security reports and understanding the ethics of vulnerability disclosure.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Tools / Projects -->
+        <section id="tools">
+            <h2>Security Tools & Labs</h2>
+            <div class="view-all" style="margin-top: -1rem; margin-bottom: 1rem;">
+                <a href="#">View all projects →</a>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">🔍</div>
+                    <h3>Recon Automation Script</h3>
+                    <p>Bash script that automates subdomain enumeration, port scanning, and screenshotting for bug bounty targets.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Bash</span>
+                        <span class="tag">Nmap</span>
+                        <span class="tag">Aquatone</span>
+                    </div>
+                    <div class="status-badge status-free">Free • Open Source</div>
+                    <a href="#" class="tool-link">GitHub →</a>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">🛡️</div>
+                    <h3>Vulnerable Lab Notes</h3>
+                    <p>My documented write-ups from HackTheBox, TryHackMe, and PortSwigger labs with detailed exploitation steps.</p>
+                    <div class="tool-tags">
+                        <span class="tag">Write-ups</span>
+                        <span class="tag">CTF</span>
+                        <span class="tag">Learning</span>
+                    </div>
+                    <div class="status-badge status-free">Free • Educational</div>
+                    <a href="#" class="tool-link">Read notes →</a>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">🔑</div>
+                    <h3>Hash Identifier & Checker</h3>
+                    <p>Simple Python tool to identify hash types and check passwords against known breach databases (local).</p>
+                    <div class="tool-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Cryptography</span>
+                    </div>
+                    <div class="status-badge status-progress">In Progress</div>
+                    <a href="#" class="tool-link">Coming soon →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <h2>Let's Connect</h2>
+            <p>
+                Have a security question, want to collaborate on a CTF, or just chat about ethical hacking? 
+                I'm always open to connecting with fellow learners and professionals.
+            </p>
+            <a href="mailto:anshif.v@proton.me" class="email-link">anshif.v@proton.me</a>
+            <p style="margin-top: 1.5rem; font-size: 0.9rem;">
+                <span style="color: var(--text-secondary);">PGP Key available on request</span>
+            </p>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2026 Muhammed Anshif V — Built with ❤️ for the security community</p>
+            <p style="margin-top: 0.75rem; font-size: 0.8rem;">
+                <span style="font-family: 'Fira Code', monospace;">$ echo "Stay curious, stay secure."</span>
+            </p>
+        </footer>
+    </main>
+</body>
+</html>

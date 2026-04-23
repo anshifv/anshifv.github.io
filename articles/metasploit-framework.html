@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is Metasploit Framework? | Muhammed Anshif V</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-deep: #0a0a0f; --bg-elevated: #13131a;
+            --text-primary: #ffffff; --text-secondary: #b0b0c0;
+            --accent-primary: #00ff88; --accent-secondary: #00ccff;
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --font-primary: 'Inter', sans-serif; --font-mono: 'JetBrains Mono', monospace;
+        }
+        body { font-family: var(--font-primary); background: var(--bg-deep); color: var(--text-primary); line-height: 1.8; min-height: 100vh; }
+        .bg-3d { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0a0a0f 100%); }
+        .container { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .back-link { color: var(--accent-primary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 2rem; }
+        .article-tag { display: inline-block; background: rgba(0, 255, 136, 0.1); color: var(--accent-primary); padding: 0.25rem 1rem; border-radius: 100px; font-size: 0.8rem; border: 1px solid rgba(0, 255, 136, 0.2); margin-bottom: 1rem; }
+        h1 { font-size: 2.5rem; margin: 1rem 0; background: linear-gradient(135deg, #fff, #b0b0c0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .article-meta { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 2rem; }
+        .article-content h2 { color: var(--accent-primary); margin: 2rem 0 1rem; font-size: 1.5rem; }
+        .article-content p { color: var(--text-secondary); margin-bottom: 1.5rem; }
+        .warning { background: rgba(239, 68, 68, 0.1); border-left: 4px solid #ef4444; padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+        pre { background: var(--bg-elevated); padding: 1.5rem; border-radius: 12px; overflow-x: auto; margin: 1.5rem 0; }
+        pre code { font-family: var(--font-mono); color: #34d399; }
+        @media (max-width: 600px) { h1 { font-size: 2rem; } }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-3d"></div>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Portfolio</a>
+        <div class="article-header">
+            <span class="article-tag">💀 Exploitation Framework</span>
+            <h1>What is Metasploit Framework?</h1>
+            <div class="article-meta">📅 Published: April 2026 • 📖 3 min read</div>
+        </div>
+        <div class="article-content">
+            <p>The Metasploit Framework is the world's most widely used penetration testing tool. Developed by HD Moore and now maintained by Rapid7, it provides security researchers and ethical hackers with a complete environment for developing, testing, and executing exploit code against remote target machines.</p>
+            
+            <h2>Core Components</h2>
+            <p>Metasploit is modular—it consists of exploits (code that takes advantage of vulnerabilities), payloads (the code that runs after exploitation), encoders (to evade detection), and auxiliary modules (for scanning, fuzzing, and other tasks). This modular design allows testers to mix and match components for specific scenarios.</p>
+            
+            <h2>How Ethical Hackers Use It</h2>
+            <p>In an authorized penetration test, Metasploit is used during the exploitation phase. After identifying a vulnerable service with tools like Nmap, the tester can search Metasploit's database for a matching exploit, configure the target and payload options, and execute the attack to gain a foothold on the system for further testing.</p>
+            <div class="warning">
+                <strong style="color: #ef4444;">⚠️ Important:</strong> Metasploit is a powerful tool that should only be used on systems you own or have explicit written permission to test. Unauthorized use is illegal.
+            </div>
+            <pre><code>msfconsole
+search eternalblue
+use exploit/windows/smb/ms17_010_eternalblue
+set RHOSTS 192.168.1.10
+run</code></pre>
+        </div>
+    </div>
+</body>
+</html>
